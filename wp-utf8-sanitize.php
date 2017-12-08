@@ -176,7 +176,8 @@ $content = preg_replace('~\x2C\xD0\x92~', ',', $content);
 	function _menu() {
 		add_submenu_page('options-general.php',
 			 'UTF8 Sanitize',
-			 'UTF8 Sanitize', 8,
+			 'UTF8 Sanitize', 
+			 'manage_options', // 2017-12-08 WRL 8,
 			 __FILE__,
 			 array($this, 'menu')
 			);
@@ -195,7 +196,7 @@ $content = preg_replace('~\x2C\xD0\x92~', ',', $content);
 		
 		// information updated ?
 		//
-		if ($_POST['submit']) {
+		if (isset($_POST['submit']) && $_POST['submit']) {
 			
 			// save
 			//
@@ -241,7 +242,7 @@ $content = preg_replace('~\x2C\xD0\x92~', ',', $content);
 		<blockquote>
 		<table border="0">
 			<tr><td>
-			<input <?php echo ($wp_utf8_sanitize_settings[output]) ? 'checked="checked"' : ''; ?> type="checkbox" name="wp_utf8_sanitize_settings[output]" value="1" id="wp_utf8_sanitize_settings_output" />
+			<input <?php echo ($wp_utf8_sanitize_settings['output']) ? 'checked="checked"' : ''; ?> type="checkbox" name="wp_utf8_sanitize_settings[output]" value="1" id="wp_utf8_sanitize_settings_output" />
 			</td><td>
 			<label for="wp_utf8_sanitize_settings_output"><b>Outputting Posts</b></label><br/>
 			</td></tr><tr><td></td><td>
@@ -250,7 +251,7 @@ $content = preg_replace('~\x2C\xD0\x92~', ',', $content);
 			<br/>&nbsp;</td></tr>
 
 			<tr><td>
-			<input <?php echo ($wp_utf8_sanitize_settings[write]) ? 'checked="checked"' : ''; ?> type="checkbox" name="wp_utf8_sanitize_settings[write]" value="1" id="wp_utf8_sanitize_settings_write" />
+			<input <?php echo ($wp_utf8_sanitize_settings['write']) ? 'checked="checked"' : ''; ?> type="checkbox" name="wp_utf8_sanitize_settings[write]" value="1" id="wp_utf8_sanitize_settings_write" />
 			</td><td>
 			<label for="wp_utf8_sanitize_settings_write"><b>Saving Posts</b></label><br/>
 			</td></tr><tr><td></td><td>
