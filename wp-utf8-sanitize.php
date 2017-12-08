@@ -126,9 +126,14 @@ $content = preg_replace('~\xC3\x83\xC2\xA2\xC3\xA2\xE2\x80\x9A\xC2\xAC\xC3\x82\x
 $content = preg_replace('~\xD0\xB2\xD0\x82\xD1\x9C~', '&rdquo;', $content);
 
 // &ldquo; , &#8220;
-$content = preg_replace('~\xC3\xA2\xE2\x82\xAC\xC5\x93~', '&ldquo;', $content);
-$content = preg_replace('~\xC3\x83\xC2\xA2\xC3\xA2\xE2\x80\x9A\xC2\xAC\xC3\x85\xE2\x80\x9C~', '&ldquo;', $content);
-$content = preg_replace('~\xD0\xB2\xD0\x82\xD1\x9A~', '&ldquo;', $content);
+//$content = preg_replace('~\xC3\xA2\xE2\x82\xAC\xC5\x93~', '&ldquo;', $content);
+//$content = preg_replace('~\xC3\x83\xC2\xA2\xC3\xA2\xE2\x80\x9A\xC2\xAC\xC3\x85\xE2\x80\x9C~', '&ldquo;', $content);
+//$content = preg_replace('~\xD0\xB2\xD0\x82\xD1\x9A~', '&ldquo;', $content);
+// WRL: &rarr; 
+$content = preg_replace('~â†’~', '&rarr;', $content);
+$content = preg_replace('~â†‘~', '&uarr;', $content);
+$content = preg_replace('~â†“~', '&darr;', $content);
+$content = preg_replace('~â†~', '&larr;', $content);
 
 // &trade; , &#8482;
 $content = preg_replace('~\xC3\xA2\xE2\x80\x9E\xC2\xA2~', '&trade;', $content);
